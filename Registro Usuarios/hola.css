@@ -1,0 +1,33 @@
+
+body 
+{
+   background: url(IMAGENES/hola.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 100%;
+   height: 100%;
+   color: white; 
+   padding-top: 10%;
+   font-family: sans-serif;
+}
+
+form 
+{
+  width: 500px;
+  margin: auto;
+  border-radius: 1em;
+  background-color: white;
+  opacity: .9;
+  padding: 25px;
+  margin-top: 20px; 
+  color: white;
+  border: 1px solid black;
+}
+
+h1
+{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: black;  
+}
