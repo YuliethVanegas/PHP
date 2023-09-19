@@ -1,12 +1,19 @@
 <?php
     include 'Backend/conexion.php';
 
-    $cod_imagen  = $_REQUEST['cod_imagen '];
-    $sql = "DELETE FROM imagenes WHERE cod_imagen ='$cod_imagen '";
+    // Obtén y sanitiza el valor de 'cod_imagen'
+    $id = mysqli_real_escape_string($conn, $_REQUEST['cod_imagen']);
 
-    $resultado = mysqli_query($conn,$query);
+    // Construye la consulta SQL para eliminar la imagen
+    $sql = "DELETE FROM imagenes WHERE cod_imagen ='$id'";
+
+    // Ejecuta la consulta
+    $resultado = mysqli_query($conn, $sql);
+
+    // Verifica si la consulta fue exitosa y redirige a la página index.php
     if ($resultado === TRUE) {
-        header('location:index.php');
+        header('location: index.php');
+    } else {
+        echo "Error al eliminar la imagen: " . mysqli_error($conn);
     }
-
 ?>

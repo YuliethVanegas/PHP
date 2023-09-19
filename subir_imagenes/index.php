@@ -6,6 +6,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+    function confirmacion(){
+        var respuesta = confirm("¿Confirma que desea borrar el registro?");
+    if(respuesta == true){
+        return true;
+    }else {
+    return false;
+    }
+    }
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -34,7 +44,7 @@
        </div>
           <?php session_unset(); } ?>
           <input type="submit" value="Guardar" class="btn btn-primary" name="Guardar">
-         
+          
           
          </form>
        </div>
@@ -51,7 +61,7 @@
                
   </div>
   <div class="container">
-            <a href="Eliminar.php" class="btn btn-success">Eliminar</a>
+            <a href="Eliminar.php=<?php echo $row['cod_imagen'];?>" class="btn btn-success" onclick="return confirmacion()">Eliminar</a>
         </div>
   <?php }?>
        </div>
